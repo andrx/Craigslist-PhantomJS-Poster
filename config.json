@@ -1,0 +1,10 @@
+{
+    /* Same as: --ignore-ssl-errors=[true|false] ignores SSL errors, such as expired or self-signed certificate errors (default is false). Also accepted: [yes|no] */
+    "ignoreSslErrors": false,
+
+    /* Same as: --max-disk-cache-size=size limits the size of disk cache (in KB). */
+    "maxDiskCacheSize": 10240,
+
+    /* Same as: --output-encoding=utf8 */
+    "outputEncoding": "utf8"
+}

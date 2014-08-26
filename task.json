@@ -1,0 +1,28 @@
+{
+    "credentials": {
+        "email": "cra.petia@gmail.com",
+        "password": "mko0Pass"
+    },
+    "locations": [
+        "http://anchorage.craigslist.org/",
+        "http://fairbanks.craigslist.org/"
+    ],
+    "post": {
+        "phone": "+630-000-0000",
+        "contactName": "Tony",
+        "title": "OTR CDL Class A Truck Driver",
+        "city": "Chicago",
+        "state": "IL",
+        "street": "",
+        "body": [
+            "We are a small company based out of Chicago, IL and growing daily.\n",
+            "If you want to earn money and enjoy driving this is the right fit for you.\n",
+            "We run 50 states\n",
+            "Safety is our number one priority!!\n",
+            "So if you want to make great money and have no worries give us a call\n"
+        ],
+        "compensation": "1000$",
+        "images": [ 
+        ]
+    }
+}
