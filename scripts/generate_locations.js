@@ -17,7 +17,7 @@ if (system.args.length < 1) {
 		if (status !== 'success') {
 		    helpers.wrongAddress();
 		} else {
-			    locationsPage.includeJs('libs/jquery.js', function() {
+			    //locationsPage.includeJs('libs/jquery.js', function() {
 
 				//console.log(locationsPage.content); /* for debug */
 
@@ -50,7 +50,7 @@ if (system.args.length < 1) {
 					if (status !== 'success') {
 						wrongAddress();
 					} else {
-						feesPage.includeJs('libs/jquery.js', function() {
+						//feesPage.includeJs('libs/jquery.js', function() {
 
 							console.log(feesPage.content); /* for debug */
 
@@ -119,10 +119,10 @@ if (system.args.length < 1) {
 							system.stdout.writeLine('--= THE TASK HAS BEEN COMPLETED SUCCESSFULLY! =--');
 							feesPage.close();
 							phantom.exit(0);
-						});
+						//});
 					}
 				});
-			});
+			//});
 		}
     });
 }

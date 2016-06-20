@@ -4,7 +4,8 @@ var _ = require('../libs/underscore'),
     system = require('system'),
     output = [],
     task,
-    locIndex = 0;
+    locIndex = 0,
+	pathIndex = 0;
 
 if (system.args.length < 1) {
     console.log('Missing OutputFile parameter!');
@@ -83,23 +84,26 @@ function step2(page, loc) {
 // STEP 3:
 function step3(page) {
     page.onLoadFinished = function (status) {
-        step4(page);
+		pathIndex++;
+        if(pathIndex == task.path.length) step4(page);
+		else step3(page);
     };
     if (page.injectJs('libs/jquery.js')) {
-        page.evaluate(function () {
-            var $el = $('[name=id][value=jo]').eq(0);
+        page.evaluate(function (category) {
+            var $el = $("label:contains('" + category + "') > input").eq(0);
             $el.prop('checked', true)
             $el.click();
-        });
+			$('form').submit();
+        }, task.path[pathIndex]);
     }
-    console.log('| Selected "Job Offered"');
+    console.log('| Selected "' + task.path[pathIndex] + '"');
 }
 
 
 // STEP 4:
 function step4(page) {
     page.onLoadFinished = function (status) {
-        step5(page)
+        step6(page)
     };
     var submitText;
     if (page.injectJs('libs/jquery.js')) {
@@ -109,24 +113,28 @@ function step4(page) {
             }
             return $(':submit').val();
         });
+		if (submitText != "I will abide by these guidelines") step6(page);
+		else console.log('| Accepted terms of agreement');
     }
-    console.log('| Accepted terms of agreement');
 }
 
 // STEP 5:
+/*
 function step5(page) {
     page.onLoadFinished = function (status) {
         step6(page);
     };
     if (page.injectJs('libs/jquery.js')) {
-        page.evaluate(function () {
-            var $el = $('[name=id][value=125]').eq(0);
+        page.evaluate(function (task) {
+            var $el = $("label:contains('" + task.category + "') > input").eq(0);
             $el.prop('checked', true)
             $el.click();
-        });
+			$('form').submit();
+        }, task);
     }
-    console.log('| Selected "Transportation"');
+    console.log('| Selected "' + task.category + '"');
 }
+*/
 
 // STEP 6:
 function step6(page) {

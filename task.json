@@ -7,6 +7,7 @@
         "http://anchorage.craigslist.org/",
         "http://fairbanks.craigslist.org/"
     ],
+	"path": ["job offered", "transportation"],
     "post": {
         "phone": "+630-000-0000",
         "contactName": "Tony",
@@ -22,7 +23,8 @@
             "So if you want to make great money and have no worries give us a call\n"
         ],
         "compensation": "1000$",
-        "images": [ 
+        "images": [ "D:\\MyProjects\\js-automation\\images\\1.png", 
+                    "D:\\MyProjects\\js-automation\\images\\2.jpg"
         ]
     }
 }
