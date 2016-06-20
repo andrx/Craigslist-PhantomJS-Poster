@@ -32,7 +32,7 @@ phantomjs --config=config.json scripts\generate_locations.js
 
 Generated file will be stored in *results* folder as *locations.html*. Here you need to grab links to your specific locations. You can also see Paid ones just in case. Page looks like this: 
 
-<div style="text-align:center"><img src ="https://dl.dropboxusercontent.com/u/25277569/CraigslistPhantomJsPoster/locations.png"/></div>
+![locations.png](https://dl.dropboxusercontent.com/u/25277569/CraigslistPhantomJsPoster/locations.png)
 
 #### Tasks
 
@@ -79,6 +79,8 @@ phantomjs --config=config.json scripts\execute_task.js task.json "n"
 ```
 
 if the last parameter equals to **"y"** then script will shuffle sentences in the body of the ad.
+
+#### Step 6
 
 *Step 6* in the code needs your attention. This section currently is hardcoded. It would be cool to make it generic. For example, go over through all of the properties inside *task.post* and set inputs' values.
 
